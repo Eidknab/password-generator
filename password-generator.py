@@ -8,8 +8,14 @@ caracters_uppercase = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","
 #30
 symbols = [" ","!","#","$","%","(",")","*","+",",","-",".","/",":",";","<",">","=","?","@","[","]","^","_","`","{","}","|","~"]
 
+def generate (param0, param1, param2, param3, param4):
+	i = param0
+	pw = "test"
+	return pw
+	pass
+
 #Menu
-print("PW GENERATOR Build 1")
+print("PW GENERATOR Build 2")
 print("")
 print("1. Generate my password")
 print("0. Quit")
@@ -24,8 +30,7 @@ if user_answer == "0":
 elif user_answer == "1":
 	print("How many caracters ?")
 	caracters_number = input("Type a value:_")
-	print("Use Symbols ? y / n")
-	symbols_yn = input("Type a value:_")
+	print(generate(caracters_number, numbers, caracters_lowercase, caracters_uppercase, symbols))
 	pass
 else:
 	pass
