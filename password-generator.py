@@ -33,7 +33,7 @@ date_now = (datetime.datetime.today().strftime('_%Y-%m-%d_%Hh%M'))
 
 #Menu
 i=0
-print("PASSWORD GENERATOR LITE Build 6")
+print("PASSWORD GENERATOR by Eidknab")
 print("")
 caracters_number = int(input("How Many Characters?_"))
 password = generate(caracters_number, character_list)
