@@ -1,13 +1,14 @@
-#pw-generator
-#88
+#Password Generator
 
-
-#enter your mail for automated file writing
+#enter your mail here for automated file writing
 your_mail = ""
-#enter you id for automated file writing
+#enter you id here for automated file writing
 your_id = ""
 
+#88 characters
 character_list = ["%","(",")"," ","!","#","$","*","+",",","-",",","/",":",";","=","?","@","[","]","^","_","0","`","{","}","~","1","2","3","4","5","6","7","8","9","a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n","A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"]
+
+#password generation fonction
 def generate(param0, param1):
     i = 1
     pw = ""
@@ -20,11 +21,13 @@ def generate(param0, param1):
     return pw
 
 import subprocess
+#write clipboard fonction
 def copy2clip(txt):
     cmd='echo '+txt.strip()+'|clip'
     return subprocess.check_call(cmd, shell=True)
 
 import datetime
+#date format
 datetime.datetime.today()
 date_now = (datetime.datetime.today().strftime('_%Y-%m-%d_%Hh%M'))
 
@@ -47,6 +50,8 @@ if your_id == "":
     pass
 else:
     pass
+
+#txt part
 txt_file = website + date_now
 fichier = open(txt_file + ".txt", "w")
 fichier.write(txt_file + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password)
