@@ -1,36 +1,54 @@
-#pw generator
-#10
-numbers = ["0","1","2","3","4","5","6","7","8","9"]
-#27
-caracters_lowercase = ["a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n"]
-#27
-caracters_uppercase = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"]
-#30
-symbols = [" ","!","#","$","%","(",")","*","+",",","-",".","/",":",";","<",">","=","?","@","[","]","^","_","`","{","}","|","~"]
+#pw-generator
+#88
 
-def generate (param0, param1, param2, param3, param4):
-	i = param0
-	pw = "test"
-	return pw
-	pass
+
+#enter your mail for automated file writing
+your_mail = ""
+#enter you id for automated file writing
+your_id = ""
+
+character_list = ["%","(",")"," ","!","#","$","*","+",",","-",",","/",":",";","=","?","@","[","]","^","_","0","`","{","}","~","1","2","3","4","5","6","7","8","9","a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n","A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"]
+def generate(param0, param1):
+    i = 1
+    pw = ""
+    from random import randrange
+    while i < param0+1:
+        n = randrange(0, 88)
+        pw = pw + character_list[n]
+        i += 1
+    copy2clip(pw)
+    return pw
+
+import subprocess
+def copy2clip(txt):
+    cmd='echo '+txt.strip()+'|clip'
+    return subprocess.check_call(cmd, shell=True)
+
+import datetime
+datetime.datetime.today()
+date_now = (datetime.datetime.today().strftime('_%Y-%m-%d_%Hh%M'))
 
 #Menu
-print("PW GENERATOR Build 2")
+i=0
+print("PASSWORD GENERATOR LITE Build 6")
 print("")
-print("1. Generate my password")
-print("0. Quit")
-print("")
-
-#Input
-user_answer = input("Type a value:_")
-
-
-if user_answer == "0":
-	pass
-elif user_answer == "1":
-	print("How many caracters ?")
-	caracters_number = input("Type a value:_")
-	print(generate(caracters_number, numbers, caracters_lowercase, caracters_uppercase, symbols))
-	pass
+caracters_number = int(input("How Many Characters?_"))
+password = generate(caracters_number, character_list)
+print(password)
+print("Password Copied to Clipboard")
+website = input("Enter Website:_")
+if your_mail == "":
+    your_mail = input("Enter Your Mail:_")
+    pass
 else:
-	pass
+    pass
+if your_id == "":
+    your_id = input("Enter Your ID:_")
+    pass
+else:
+    pass
+txt_file = website + date_now
+print("Informations Have Been Saved in " + txt_file + ".txt")
+print("Don't Forget to Secure the Data Now !")
+
+     
