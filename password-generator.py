@@ -48,7 +48,11 @@ if your_id == "":
 else:
     pass
 txt_file = website + date_now
+fichier = open(txt_file + ".txt", "w")
+fichier.write(txt_file + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password)
+fichier.close()
 print("Informations Have Been Saved in " + txt_file + ".txt")
 print("Don't Forget to Secure the Data Now !")
+
 
      
