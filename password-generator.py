@@ -1,8 +1,10 @@
 #Password Generator
 
 #enter your mail here for automated file writing
+# bankdie@protonmail.com
 your_mail = ""
 #enter you id here for automated file writing
+# Eidknab
 your_id = ""
 
 #88 characters
@@ -32,13 +34,19 @@ datetime.datetime.today()
 date_now = (datetime.datetime.today().strftime('_%Y-%m-%d_%Hh%M'))
 
 #Menu
-i=0
-print("PASSWORD GENERATOR by Eidknab")
+import os
+os.system("cls")
+print("|-------------------------------|")
+print("| PASSWORD GENERATOR by Eidknab |")
+print("|-------------------------------|")
+print("https://github.com/Eidknab/")
 print("")
-caracters_number = int(input("How Many Characters?_"))
+i = 0
+caracters_number = input("How Many Characters?_")
+caracters_number = int(caracters_number)
 password = generate(caracters_number, character_list)
-print(password)
-print("Password Copied to Clipboard")
+print("\nYour password is:", password, "\n")
+print("Password Copied to Clipboard\n")
 website = input("Enter Website:_")
 if your_mail == "":
     your_mail = input("Enter Your Mail:_")
@@ -50,13 +58,12 @@ if your_id == "":
     pass
 else:
     pass
-
 #txt part
 txt_file = website + date_now
 fichier = open(txt_file + ".txt", "w")
 fichier.write(txt_file + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password)
 fichier.close()
-print("Informations Have Been Saved in " + txt_file + ".txt")
+print("\nInformations Have Been Saved in " + txt_file + ".txt")
 print("Don't Forget to Secure the Data Now !")
 
 
