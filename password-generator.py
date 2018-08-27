@@ -1,10 +1,10 @@
 #Password Generator
 
-#enter your mail here for automated file writing
-# bankdie@protonmail.com
+#enter your mail & userid here for automated file writing
+# exemple: 
+#your_mail = "mymail@hello.com"
+#your_id = "myuserid"
 your_mail = ""
-#enter you id here for automated file writing
-# Eidknab
 your_id = ""
 
 #88 characters
@@ -22,8 +22,8 @@ def generate(param0, param1):
     copy2clip(pw)
     return pw
 
-import subprocess
 #write clipboard fonction
+import subprocess
 def copy2clip(txt):
     cmd='echo '+txt.strip()+'|clip'
     return subprocess.check_call(cmd, shell=True)
@@ -48,29 +48,32 @@ password = generate(caracters_number, character_list)
 print("\nYour password is:", password, "\n")
 print("Password Copied to Clipboard\n")
 website = input("Enter Website:_")
+website = website.lower()
+try:
+	website = website.replace("http://", "")
+	website = website.replace("https://", "")
+	website = website.replace("www.", "")
+except:
+	pass
 if your_mail == "":
     your_mail = input("Enter Your Mail:_")
-    pass
 else:
-    pass
+	print("Mail Found in Memory: " + your_mail)
 if your_id == "":
     your_id = input("Enter Your ID:_")
-    pass
+    print("/?\ For better automation, your mail and your userID are editable in .py file (line 3-8).")
 else:
-    pass
-
+	print("User ID Found in Memory: " + your_id)
 #date format
 import datetime
 datetime.datetime.today()
 date_now = (datetime.datetime.today().strftime(' %Y-%m-%d %Hh%M'))
-
 #txt part
 txt_title = "-------------------------------\n" + "Created" + date_now + "\n" + "-------------------------------"
-fichier = open(website + ".txt", "a")
+fichier = open(website.capitalize() + ".txt", "a")
 fichier.write(txt_title + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password + "\n\n")
 fichier.close()
 print("\nInformations Have Been Saved in " + website + ".txt")
 print("Don't Forget to Secure the Data Now !")
-
 
      
