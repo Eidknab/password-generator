@@ -28,11 +28,6 @@ def copy2clip(txt):
     cmd='echo '+txt.strip()+'|clip'
     return subprocess.check_call(cmd, shell=True)
 
-import datetime
-#date format
-datetime.datetime.today()
-date_now = (datetime.datetime.today().strftime('_%Y-%m-%d_%Hh%M'))
-
 #Menu
 import os
 os.system("cls")
@@ -41,9 +36,14 @@ print("| PASSWORD GENERATOR by Eidknab |")
 print("|-------------------------------|")
 print("https://github.com/Eidknab/")
 print("")
-i = 0
-caracters_number = input("How Many Characters?_")
-caracters_number = int(caracters_number)
+i = 0 
+while i < 1:
+	caracters_number = input("How Many Characters?_")
+	try:
+		caracters_number = int(caracters_number)
+		i = i + 1
+	except:
+		print("Input Error")
 password = generate(caracters_number, character_list)
 print("\nYour password is:", password, "\n")
 print("Password Copied to Clipboard\n")
@@ -58,12 +58,18 @@ if your_id == "":
     pass
 else:
     pass
+
+#date format
+import datetime
+datetime.datetime.today()
+date_now = (datetime.datetime.today().strftime(' %Y-%m-%d %Hh%M'))
+
 #txt part
-txt_file = website + date_now
-fichier = open(txt_file + ".txt", "w")
-fichier.write(txt_file + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password)
+txt_title = "-------------------------------\n" + "Created" + date_now + "\n" + "-------------------------------"
+fichier = open(website + ".txt", "a")
+fichier.write(txt_title + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password + "\n\n")
 fichier.close()
-print("\nInformations Have Been Saved in " + txt_file + ".txt")
+print("\nInformations Have Been Saved in " + website + ".txt")
 print("Don't Forget to Secure the Data Now !")
 
 
