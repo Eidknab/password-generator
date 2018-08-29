@@ -11,6 +11,13 @@ while i < 1:
     print("https://github.com/Eidknab/")
     print("")
     website = input("Input  Website:_")
+    website = website.lower()
+    try:
+        website = website.replace("http://", "")
+        website = website.replace("https://", "")
+        website = website.replace("www.", "")
+    except:
+        pass
     your_mail = input("Input Your Mail:_")
     your_id = input("Input Your ID:_")
     password = input("Input Your Password:_")
@@ -20,7 +27,7 @@ while i < 1:
     datetime.datetime.today()
     date_now = (datetime.datetime.today().strftime('_%Y-%m-%d_%Hh%M'))
     txt_title = "-------------------------------\n" + "Created" + date_now + "\n" + "-------------------------------"
-    fichier = open(website + ".txt", "a")
+    fichier = open(website.capitalize() + ".txt", "a")
     fichier.write(txt_title + "\nWebsite: " + website + "\nUser ID: " + your_id + "\nEmail: " + your_mail + "\nPassword: " + password + "\n\n")
     fichier.close()
     print("\nInformations Have Been Saved in " + website + ".txt")

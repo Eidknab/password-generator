@@ -33,9 +33,9 @@ def copy2clip(txt):
 import os
 os.system("cls")
 print("|-------------------------------|")
-print("|      PASSWORD GENERATOR       |")
+print("| PASSWORD GENERATOR by Eidknab |")
 print("|-------------------------------|")
-print("")
+print("https://github.com/Eidknab/")
 print("")
 i = 0 
 while i < 1:
