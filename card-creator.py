@@ -11,9 +11,9 @@ while i < 1:
     print("https://github.com/Eidknab/")
     print("")
     website = input("Input  Website:_")
-    password = input("Input Your Password:_")
     your_mail = input("Input Your Mail:_")
     your_id = input("Input Your ID:_")
+    password = input("Input Your Password:_")
     #txt part
     #date format
     import datetime
