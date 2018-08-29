@@ -5,10 +5,11 @@ i = 0
 import os
 while i < 1:
     os.system("cls")
-    print("|-------------------------|")
-    print("| CARD CREATOR by Eidknab |")
-    print("|-------------------------|")
-    print("https://github.com/Eidknab/")
+    from clint.textui import colored, puts
+    puts(colored.yellow('|-------------------------|'))
+    puts(colored.yellow('| CARD CREATOR by Eidknab |'))
+    puts(colored.yellow('|-------------------------|'))
+    puts(colored.yellow('https://github.com/Eidknab/'))
     print("")
     website = input("Input  Website:_")
     website = website.lower()

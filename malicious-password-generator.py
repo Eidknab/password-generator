@@ -33,10 +33,11 @@ def copy2clip(txt):
 #Menu
 import os
 os.system("cls")
-print("|-------------------------------|")
-print("|      PASSWORD GENERATOR       |")
-print("|-------------------------------|")
-print("")
+from clint.textui import colored, puts
+puts(colored.green('|--------------------------------|'))
+puts(colored.green('| PASSWORD GENERATOR* by Eidknab |'))
+puts(colored.green('|--------------------------------|'))
+puts(colored.green('https://github.com/Eidknab/'))
 print("")
 i = 0 
 while i < 1:
