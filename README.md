@@ -1,9 +1,9 @@
-# password-generator
+# Password-generator
 This script generate a password with a txt.card to keep it indexed & secured where you want.
 It also copy the password in your clipboard.
 Edit .py file for configuration
 
-# card-creator
+# Card-creator
 Same thing with card creator except the script let you put the password by yourself
 
 # Malicious-password-generator
